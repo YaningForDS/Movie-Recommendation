@@ -3,7 +3,7 @@ from watson_developer_cloud import AlchemyLanguageV1
 from alchemyapi import AlchemyAPI
 import json
 import csv
-
+import os
 
 print('############################################')
 print('#   Keyword Extraction Example             #')
