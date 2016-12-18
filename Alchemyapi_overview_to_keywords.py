@@ -8,11 +8,18 @@ import os
 print('############################################')
 print('#   Keyword Extraction Example             #')
 print('############################################')
+'''
+the filename
+'''
+current_file_path = __file__
+upper_dir = os.path.dirname(os.getcwd())
 
+data_dir = os.path.join(upper_dir, 'data')
+filename = os.path.join(data_dir, 'Allmovie_2.csv.csv')
 
 alchemy_language = AlchemyLanguageV1(api_key= '7a454d32972b85fd2599536ba9063e4d1530014b')
 alchemyapi = AlchemyAPI()
-f = open('/data/Allmovie_2.csv','rb')
+f = open(filename,'rb')
 reader = csv.DictReader(f)
 result = open('result_of_alchemyapi_overview_to_keywords.csv','w')
 fieldnames = ['movie overview', 'movie keywords']
