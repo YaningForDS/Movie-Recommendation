@@ -12,9 +12,9 @@ print('############################################')
 
 alchemy_language = AlchemyLanguageV1(api_key= '7a454d32972b85fd2599536ba9063e4d1530014b')
 alchemyapi = AlchemyAPI()
-f = open('Allmovie_2.csv','rb')
+f = open('/data/Allmovie_2.csv','rb')
 reader = csv.DictReader(f)
-result = open('name.csv','w')
+result = open('result_of_alchemyapi_overview_to_keywords.csv','w')
 fieldnames = ['movie overview', 'movie keywords']
 writer = csv.DictWriter(result, fieldnames = fieldnames)
 writer.writeheader()
