@@ -1,11 +1,23 @@
+import os
+'''
+find path of data file I need
+'''
+
+current_file_path = __file__
+upper_dir = os.path.dirname(os.getcwd())
+
+data_dir = os.path.join(upper_dir, 'data')
+fileAllData = os.path.join(data_dir, 'Allmovie_2.csv')
+fileTheme = os.path.join(data_dir, 'overview_theme.csv')
+
 
 '''
   Write overview, which is movie description, and themes to a new CSV file
 '''
 import csv
-f = open('/dataAllmovie_2.csv','rb')
+f = open(fileAllData,'rb')
 reader = csv.DictReader(f)
-result = open('/data/overview_theme.csv','w')
+result = open(fileTheme,'w')
 fieldnames = ['movie description','movie theme']
 writer = csv.DictWriter(result, fieldnames=fieldnames)
 writer.writeheader()
