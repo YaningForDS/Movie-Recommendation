@@ -8,6 +8,24 @@ print('')
 
 import numpy as np 
 import scipy
+import csv
+
+f = open('/Users/Yaning/Desktop/CloudComputing/Movie_project/data/overview_theme.csv','rb')
+reader = csv.DictReader(f)
+A = set()
+for row in reader:
+    tempt = row['movie theme'].replace("'",'').replace('[','').replace(']','').split(',')
+    for item in tempt:
+        item = item.strip()
+        A.add(item)
+res = list(A)[1:]
+print len(res)
+dictionary = {}
+i = 1
+for line in res:
+    dictionary[i] = line
+    i = i + 1
+#print dictionary
 
 '''
 Generate character-theme matrix
