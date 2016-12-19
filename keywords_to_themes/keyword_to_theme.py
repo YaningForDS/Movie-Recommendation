@@ -74,15 +74,28 @@ result = predict('["storm","sink","ship"]')
 theme_class =  result['classes']
 
 recommendTheme =[]
+
+print('')
+print('')
+print('#############################################')
+print('#   The top 3 themes you might be interested #')
+print('#############################################')
 for i in xrange(3):
-	print "Theme 1: "
+
+	print "Theme" +  str(i+1) + ':'
 	print theme_class[i]['class_name']
 	recommendTheme.append(theme_class[i]['class_name'])
 
+
+
+print('')
+print('')
+print('############################################')
+print('#   The top 5 movies you may like          #')
+print('############################################')
 ##--- From Theme to movie ---##
 recommendMovie = get_movie(recommendTheme)
-print recommendMovie
-
-
+for item in recommendMovie:
+	print item
 
 
