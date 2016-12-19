@@ -9,8 +9,16 @@ print('')
 import numpy as np 
 import scipy
 import csv
+import os
+import random
 
-f = open('/Users/Yaning/Desktop/CloudComputing/Movie_project/data/overview_theme.csv','rb')
+current_file_path = __file__
+upper_dir = os.path.dirname(os.getcwd())
+
+data_dir = os.path.join(upper_dir, 'data')
+filename = os.path.join(data_dir, 'overview_theme.csv')
+
+f = open(filename,'rb')
 reader = csv.DictReader(f)
 A = set()
 for row in reader:
